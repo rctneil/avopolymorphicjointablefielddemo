@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_22_123744) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_22_140217) do
   create_table "coasters", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
@@ -24,12 +24,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_22_123744) do
   end
 
   create_table "personables", force: :cascade do |t|
-    t.integer "person_id"
     t.integer "personable_id"
     t.string "personable_type"
     t.text "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "person_id"
   end
 
 end
