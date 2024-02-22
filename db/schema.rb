@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_22_140217) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_22_150123) do
+  create_table "albums", force: :cascade do |t|
+    t.string "title"
+    t.string "type"
+    t.integer "parent_id"
+    t.integer "lft", null: false
+    t.integer "rgt", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lft"], name: "index_albums_on_lft"
+    t.index ["parent_id"], name: "index_albums_on_parent_id"
+    t.index ["rgt"], name: "index_albums_on_rgt"
+  end
+
   create_table "coasters", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
